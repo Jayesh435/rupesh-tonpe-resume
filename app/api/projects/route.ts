@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
-import { connectDB, hasDatabase } from "@/lib/db";
+import { connectDB } from "@/lib/db";
 import { ProjectModel } from "@/lib/models/Project";
 import { newId, store } from "@/lib/fallback-store";
 import { requireAdmin } from "@/lib/api-guard";
 import { slugify } from "@/lib/utils";
 
 export async function GET() {
-  if (hasDatabase) {
-    await connectDB();
+  const database = await connectDB();
+  if (database) {
     const docs = await ProjectModel.find().sort({ createdAt: -1 }).lean();
     return NextResponse.json(docs);
   }
@@ -36,8 +36,8 @@ export async function POST(request: Request) {
     status: body.status === "published" ? "published" : "draft",
   };
 
-  if (hasDatabase) {
-    await connectDB();
+  const database = await connectDB();
+  if (database) {
     const created = await ProjectModel.create(project);
     return NextResponse.json(created, { status: 201 });
   }
