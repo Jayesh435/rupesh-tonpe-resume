@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #e94560 #111;
+}
+
+body {
+  background:
+    radial-gradient(1200px circle at 20% 0%, rgba(233, 69, 96, 0.16), transparent 45%),
+    radial-gradient(1200px circle at 80% 30%, rgba(255, 140, 66, 0.15), transparent 45%),
+    #070709;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.marquee-track {
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
