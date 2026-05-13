@@ -21,7 +21,7 @@ export function CustomCursor() {
 
   return (
     <motion.div
-      aria-hidden
+      aria-hidden={true}
       className="pointer-events-none fixed z-[100] hidden h-5 w-5 rounded-full bg-gradient-to-r from-[#E94560] to-[#FF8C42] mix-blend-screen md:block"
       style={{ x: springX, y: springY }}
     />

@@ -62,7 +62,7 @@ export function ProjectGrid({ initialProjects }: { initialProjects: Project[] })
 
       {modal && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 p-4" onClick={() => setModal(null)}>
-          <GlassCard className="max-h-[90vh] w-full max-w-4xl overflow-y-auto p-4" >
+          <GlassCard className="max-h-[90vh] w-full max-w-4xl overflow-y-auto p-4" onClick={(event) => event.stopPropagation()}>
             <div className="relative h-80 w-full">
               <Image src={modal.coverImage} alt={modal.title} fill className="rounded-xl object-cover" />
             </div>

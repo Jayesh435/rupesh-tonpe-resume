@@ -38,7 +38,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <section className="grid gap-6 md:grid-cols-2">
         <GlassCard className="space-y-3 p-6">
           <h2 className="text-2xl font-semibold">Before / After</h2>
-          <BeforeAfterSlider before={project.images[0] || project.coverImage} after={project.images[1] || project.coverImage} />
+          {project.images.length > 1 ? (
+            <BeforeAfterSlider before={project.images[0]} after={project.images[1]} />
+          ) : (
+            <p className="text-sm text-zinc-400">Before/after comparison will appear when both source stages are available.</p>
+          )}
         </GlassCard>
         <GlassCard className="space-y-3 p-6">
           <h2 className="text-2xl font-semibold">Video Embed</h2>

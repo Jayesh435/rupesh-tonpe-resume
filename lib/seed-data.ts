@@ -95,7 +95,7 @@ export const projects: Project[] = projectBase.map(([title, category, client], i
     `https://images.unsplash.com/photo-${1500000000000 + i * 111111}?auto=format&fit=crop&w=1400&q=80`,
     `https://images.unsplash.com/photo-${1500000000500 + i * 111111}?auto=format&fit=crop&w=1400&q=80`,
   ],
-  videos: ["https://www.youtube.com/embed/dQw4w9WgXcQ"],
+  videos: ["https://www.youtube.com/embed/9No-FiEInLA"],
   behanceUrl: "https://www.behance.net/",
   instagramUrl: "https://www.instagram.com/",
   tags: ["Creative Direction", "Premium", "Cinematic"],

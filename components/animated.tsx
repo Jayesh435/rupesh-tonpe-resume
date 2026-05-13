@@ -17,9 +17,16 @@ export function FadeIn({ children, className, delay = 0 }: { children: React.Rea
   );
 }
 
-export function GlassCard({ children, className }: { children: React.ReactNode; className?: string }) {
+export function GlassCard({
+  children,
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement> & { children: React.ReactNode; className?: string }) {
   return (
-    <div className={cn("rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_20px_80px_-40px_rgba(233,69,96,0.65)]", className)}>
+    <div
+      className={cn("rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_20px_80px_-40px_rgba(233,69,96,0.65)]", className)}
+      {...props}
+    >
       {children}
     </div>
   );

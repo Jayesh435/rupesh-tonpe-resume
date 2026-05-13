@@ -13,6 +13,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: "Invalid credentials" }, { status: 401 });
   }
 
+  if (process.env.NODE_ENV === "production" && !configuredHash) {
+    return NextResponse.json({ message: "Server auth is not configured." }, { status: 500 });
+  }
+
   const hash = configuredHash || (await hashPassword("admin123"));
   const isValid = await verifyPassword(password, hash);
 

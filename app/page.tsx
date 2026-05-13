@@ -20,9 +20,9 @@ export default async function HomePage() {
             <Link href="/contact" className="rounded-full border border-white/20 px-6 py-3 font-semibold">Let&apos;s Collaborate</Link>
           </div>
           <div className="flex gap-4 text-sm text-zinc-300">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-            <a href="https://behance.net" target="_blank" rel="noreferrer">Behance</a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://www.instagram.com/rupeshtonpe/" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.behance.net/rupeshtonpe" target="_blank" rel="noreferrer">Behance</a>
+            <a href="https://www.linkedin.com/in/rupesh-tonpe/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </FadeIn>
       </section>
@@ -83,7 +83,7 @@ export default async function HomePage() {
         <GlassCard className="space-y-4 p-6">
           <h3 className="text-2xl font-semibold">Showreel Preview</h3>
           <div className="aspect-video overflow-hidden rounded-xl">
-            <iframe className="h-full w-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Reel" allowFullScreen />
+            <iframe className="h-full w-full" src="https://www.youtube.com/embed/9No-FiEInLA" title="Reel" allowFullScreen />
           </div>
         </GlassCard>
         <GlassCard className="space-y-4 p-6">

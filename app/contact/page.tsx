@@ -39,10 +39,10 @@ export default function ContactPage() {
 
         <div className="space-y-4 rounded-2xl border border-white/10 bg-white/5 p-6">
           <a href="mailto:hello@rupeshtonpe.com" className="block">Email: hello@rupeshtonpe.com</a>
-          <a href="https://wa.me/919999999999" target="_blank" rel="noreferrer" className="block">WhatsApp Chat</a>
-          <a href="https://calendly.com" target="_blank" rel="noreferrer" className="block">Book via Calendly</a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="block">Instagram</a>
-          <a href="https://behance.net" target="_blank" rel="noreferrer" className="block">Behance</a>
+          <a href="https://wa.me/919604567890" target="_blank" rel="noreferrer" className="block">WhatsApp Chat</a>
+          <a href="https://calendly.com/rupesh-tonpe" target="_blank" rel="noreferrer" className="block">Book via Calendly</a>
+          <a href="https://www.instagram.com/rupeshtonpe/" target="_blank" rel="noreferrer" className="block">Instagram</a>
+          <a href="https://www.behance.net/rupeshtonpe" target="_blank" rel="noreferrer" className="block">Behance</a>
           <div className="overflow-hidden rounded-xl border border-white/10">
             <iframe
               title="map"
