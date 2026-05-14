@@ -2,6 +2,13 @@ import { v2 as cloudinary } from "cloudinary";
 
 export const CLOUDINARY_NOT_CONFIGURED_ERROR = "Cloudinary is not configured.";
 
+export class CloudinaryNotConfiguredError extends Error {
+  constructor() {
+    super(CLOUDINARY_NOT_CONFIGURED_ERROR);
+    this.name = "CloudinaryNotConfiguredError";
+  }
+}
+
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -10,7 +17,7 @@ cloudinary.config({
 
 export async function uploadToCloudinary(fileBuffer: Buffer, folder = "rupesh-portfolio") {
   if (!process.env.CLOUDINARY_CLOUD_NAME) {
-    throw new Error(CLOUDINARY_NOT_CONFIGURED_ERROR);
+    throw new CloudinaryNotConfiguredError();
   }
 
   return new Promise<{ secure_url: string }>((resolve, reject) => {

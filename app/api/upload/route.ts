@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { CLOUDINARY_NOT_CONFIGURED_ERROR, uploadToCloudinary } from "@/lib/cloudinary";
+import { CloudinaryNotConfiguredError, uploadToCloudinary } from "@/lib/cloudinary";
 import { requireAdmin } from "@/lib/api-guard";
 
 export async function POST(request: Request) {
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ url: result.secure_url });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Upload failed";
-    const status = message === CLOUDINARY_NOT_CONFIGURED_ERROR ? 400 : 502;
+    const status = error instanceof CloudinaryNotConfiguredError ? 400 : 502;
     return NextResponse.json({ message }, { status });
   }
 }
